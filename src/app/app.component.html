@@ -1,36 +1,9 @@
-<mat-sidenav-container>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <div fxHide.gt-xs>
-        <a mat-button [mat-menu-trigger-for]="menu" aria-label="Menu button">
-          <mat-icon>menu</mat-icon>
-        </a>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/simple">
-            <mat-icon class="icon">snippet_folder</mat-icon>
-            Simple
-          </button>
-        </mat-menu>
-      </div>
-      <div>
-        <a>
-          Material Samples
-        </a>
-      </div>
-      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
-          <li>
-            <a routerLink="/simple">
-              <mat-icon class="icon">snippet_folder</mat-icon>
-              <span class="label">Simple</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </mat-toolbar>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
+<app-page-layout title="Material Samples" [navigation]="[
+{
+  routerLink: '/simple',
+  label: 'Simple',
+  icon: 'snippet_folder'
+}
+]">
+  <router-outlet></router-outlet>
+</app-page-layout>
